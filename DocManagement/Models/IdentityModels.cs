@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
@@ -12,6 +13,11 @@ namespace DocManagement.Models
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit https://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
     {
+        //public enum Position
+        //{
+        //    A, B, C, D, F
+        //}
+
         [Required]
         public string FirstName { get; set; }
         [Required]
@@ -25,6 +31,9 @@ namespace DocManagement.Models
         // not supose to be here \/
         [DisplayFormat(DataFormatString = "{0:dd MMMM yyyy}")]
         public DateTime RegistrationDate { get; set; }
+
+        public virtual ICollection<Download> Download { get; set; }
+        public virtual ICollection<Upload> Upload { get; set; }
 
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
@@ -47,5 +56,9 @@ namespace DocManagement.Models
         {
             return new ApplicationDbContext();
         }
+
+        public DbSet<Document> Documentss { get; set; }
+        public DbSet<Download> Downloads { get; set; }
+        public DbSet<Upload> Uploads { get; set; }
     }
 }
