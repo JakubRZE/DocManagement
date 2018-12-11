@@ -9,14 +9,13 @@ namespace DocManagement.Models
 {
     public class Upload
     {
-        [Required]
-        public int Id { get; set; }
+        [Key]
+        [ForeignKey("Document")]
+        public int DocumentId { get; set; }
 
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public DateTime UploadDate { get; set; }
-
-        [Required]
-        public int DocumentId { get; set; }
+        
         public virtual Document Document { get; set; }
 
         [Required]
