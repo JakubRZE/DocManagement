@@ -18,8 +18,10 @@ namespace DocManagement.Models
         [Required]
         public string Tags { get; set; }
 
- 
+        [Required]
+        public int UploadId { get; set; }
         public virtual Upload Upload { get; set; }
+
         public virtual ICollection<Download> Download { get; set; }
     }
 }
