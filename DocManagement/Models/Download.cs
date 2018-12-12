@@ -9,19 +9,17 @@ namespace DocManagement.Models
 {
     public class Download
     {
-        [Required]
         public int Id { get; set; }
 
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public DateTime DownloadDate { get; set; }
-
 
         [Required]
         public int DocumentId { get; set; }
         public virtual Document Document { get; set; }
 
         [Required]
-        public string AplicationUserId { get; set; }
+        //public string AplicationUserId { get; set; }
         public virtual ApplicationUser AplicationUser { get; set; }
 
        

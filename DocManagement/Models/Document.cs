@@ -10,16 +10,22 @@ namespace DocManagement.Models
     public class Document
     {
         public int Id { get; set; }
-        [Required]
-        public string Name { get; set; }
+
         [Required]
         public string Description { get; set; }
-        [Required]
-        public string Tags { get; set; }
 
-        public int UploadId { get; set; }
-        public virtual Upload Upload { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public DateTime UploadDate { get; set; }
+
+        [Required]
+        public string File { get; set; }
+
+        public int Views { get; set; }
+
+        [Required]
+        public string AplicationUserId { get; set; }
+        public virtual ApplicationUser AplicationUser { get; set; }
 
         public virtual ICollection<Download> Download { get; set; }
     }
-}
+} 

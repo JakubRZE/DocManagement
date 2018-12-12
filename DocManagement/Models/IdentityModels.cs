@@ -32,8 +32,8 @@ namespace DocManagement.Models
         [DisplayFormat(DataFormatString = "{0:dd MMMM yyyy}")]
         public DateTime RegistrationDate { get; set; }
 
-        public virtual ICollection<Download> Download { get; set; }
-        public virtual ICollection<Upload> Upload { get; set; }
+        public virtual Download Downloads { get; set; }
+        public virtual ICollection<Document> Documents { get; set; }
 
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
@@ -59,6 +59,5 @@ namespace DocManagement.Models
 
         public DbSet<Document> Documentss { get; set; }
         public DbSet<Download> Downloads { get; set; }
-        public DbSet<Upload> Uploads { get; set; }
     }
 }
