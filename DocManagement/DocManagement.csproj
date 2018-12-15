@@ -216,6 +216,14 @@
     <Compile Include="Migrations\201812122133331_DocumentModelViewsPropAdded.Designer.cs">
       <DependentUpon>201812122133331_DocumentModelViewsPropAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812152204078_Account_fk_change.cs" />
+    <Compile Include="Migrations\201812152204078_Account_fk_change.Designer.cs">
+      <DependentUpon>201812152204078_Account_fk_change.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812152205538_fk_changes.cs" />
+    <Compile Include="Migrations\201812152205538_fk_changes.Designer.cs">
+      <DependentUpon>201812152205538_fk_changes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Document.cs" />
@@ -358,6 +366,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812122133331_DocumentModelViewsPropAdded.resx">
       <DependentUpon>201812122133331_DocumentModelViewsPropAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812152204078_Account_fk_change.resx">
+      <DependentUpon>201812152204078_Account_fk_change.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812152205538_fk_changes.resx">
+      <DependentUpon>201812152205538_fk_changes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

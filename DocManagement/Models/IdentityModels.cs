@@ -31,10 +31,9 @@ namespace DocManagement.Models
         // not supose to be here \/
         [DisplayFormat(DataFormatString = "{0:dd MMMM yyyy}")]
         public DateTime RegistrationDate { get; set; }
-
-        public virtual Download Downloads { get; set; }
+        
         public virtual ICollection<Document> Documents { get; set; }
-
+        public virtual ICollection<Download> Downloads { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
@@ -57,7 +56,7 @@ namespace DocManagement.Models
             return new ApplicationDbContext();
         }
 
-        public DbSet<Document> Documentss { get; set; }
+        public DbSet<Document> Documents { get; set; }
         public DbSet<Download> Downloads { get; set; }
     }
 }
