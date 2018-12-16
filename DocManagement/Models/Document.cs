@@ -23,8 +23,8 @@ namespace DocManagement.Models
         public int Views { get; set; }
 
         [Required]
-        public string AplicationUserId { get; set; }
-        public virtual ApplicationUser AplicationUser { get; set; }
+        public string ApplicationUserId { get; set; }
+        public virtual ApplicationUser ApplicationUser { get; set; }
 
         public virtual ICollection<Download> Download { get; set; }
     }

@@ -19,7 +19,7 @@ namespace DocManagement.Models
         public virtual Document Document { get; set; }
 
         [Required]
-        public string AplicationUserId { get; set; }
+        public string ApplicationUserId { get; set; }
         public virtual ApplicationUser AplicationUser { get; set; }
 
        

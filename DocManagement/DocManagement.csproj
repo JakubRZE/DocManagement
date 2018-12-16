@@ -191,7 +191,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\DocumentsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -224,6 +223,10 @@
     <Compile Include="Migrations\201812152205538_fk_changes.cs" />
     <Compile Include="Migrations\201812152205538_fk_changes.Designer.cs">
       <DependentUpon>201812152205538_fk_changes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812161748252_TablesUpdate.cs" />
+    <Compile Include="Migrations\201812161748252_TablesUpdate.Designer.cs">
+      <DependentUpon>201812161748252_TablesUpdate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -337,11 +340,6 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Shared\_NavbarPartial.cshtml" />
     <Content Include="Views\Shared\_SidebarPartial.cshtml" />
-    <Content Include="Views\Documents\Create.cshtml" />
-    <Content Include="Views\Documents\Delete.cshtml" />
-    <Content Include="Views\Documents\Details.cshtml" />
-    <Content Include="Views\Documents\Edit.cshtml" />
-    <Content Include="Views\Documents\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -378,6 +376,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812152205538_fk_changes.resx">
       <DependentUpon>201812152205538_fk_changes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812161748252_TablesUpdate.resx">
+      <DependentUpon>201812161748252_TablesUpdate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
