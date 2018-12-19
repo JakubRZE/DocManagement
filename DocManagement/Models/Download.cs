@@ -9,6 +9,7 @@ namespace DocManagement.Models
 {
     public class Download
     {
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -21,7 +22,5 @@ namespace DocManagement.Models
         [Required]
         public string ApplicationUserId { get; set; }
         public virtual ApplicationUser AplicationUser { get; set; }
-
-       
     }
 }

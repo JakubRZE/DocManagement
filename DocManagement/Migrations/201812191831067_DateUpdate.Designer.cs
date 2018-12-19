@@ -7,13 +7,13 @@ namespace DocManagement.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class fk_changes : IMigrationMetadata
+    public sealed partial class DateUpdate : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(fk_changes));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(DateUpdate));
         
         string IMigrationMetadata.Id
         {
-            get { return "201812152205538_fk_changes"; }
+            get { return "201812191831067_DateUpdate"; }
         }
         
         string IMigrationMetadata.Source

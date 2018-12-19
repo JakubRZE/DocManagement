@@ -9,6 +9,7 @@ namespace DocManagement.Models
 {
     public class Document
     {
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         [Required]
@@ -22,7 +23,6 @@ namespace DocManagement.Models
 
         public int Views { get; set; }
 
-        [Required]
         public string ApplicationUserId { get; set; }
         public virtual ApplicationUser ApplicationUser { get; set; }
 

@@ -7,13 +7,13 @@ namespace DocManagement.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class DocumentModelViewsPropAdded : IMigrationMetadata
+    public sealed partial class InitialCreate : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(DocumentModelViewsPropAdded));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate));
         
         string IMigrationMetadata.Id
         {
-            get { return "201812122133331_DocumentModelViewsPropAdded"; }
+            get { return "201812191828560_InitialCreate"; }
         }
         
         string IMigrationMetadata.Source

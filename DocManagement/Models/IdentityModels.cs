@@ -26,9 +26,10 @@ namespace DocManagement.Models
         public string Address { get; set; }
         [Required]
         public string Position { get; set; }
-        [Required]
+
+        //[Required]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        // not supose to be here \/
+        //// not supose to be here \/
         [DisplayFormat(DataFormatString = "{0:dd MMMM yyyy}")]
         public DateTime RegistrationDate { get; set; }
         

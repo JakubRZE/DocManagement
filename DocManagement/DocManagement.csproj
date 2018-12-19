@@ -196,37 +196,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201812092056585_InitialCreate.cs" />
-    <Compile Include="Migrations\201812092056585_InitialCreate.Designer.cs">
-      <DependentUpon>201812092056585_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201812191828560_InitialCreate.cs" />
+    <Compile Include="Migrations\201812191828560_InitialCreate.Designer.cs">
+      <DependentUpon>201812191828560_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201812092115314_ApplicationUserUpdate.cs" />
-    <Compile Include="Migrations\201812092115314_ApplicationUserUpdate.Designer.cs">
-      <DependentUpon>201812092115314_ApplicationUserUpdate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812111822512_UploadDownloadDocumentModelsAdded.cs" />
-    <Compile Include="Migrations\201812111822512_UploadDownloadDocumentModelsAdded.Designer.cs">
-      <DependentUpon>201812111822512_UploadDownloadDocumentModelsAdded.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812122035102_ModelsReorganization.cs" />
-    <Compile Include="Migrations\201812122035102_ModelsReorganization.Designer.cs">
-      <DependentUpon>201812122035102_ModelsReorganization.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812122133331_DocumentModelViewsPropAdded.cs" />
-    <Compile Include="Migrations\201812122133331_DocumentModelViewsPropAdded.Designer.cs">
-      <DependentUpon>201812122133331_DocumentModelViewsPropAdded.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812152204078_Account_fk_change.cs" />
-    <Compile Include="Migrations\201812152204078_Account_fk_change.Designer.cs">
-      <DependentUpon>201812152204078_Account_fk_change.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812152205538_fk_changes.cs" />
-    <Compile Include="Migrations\201812152205538_fk_changes.Designer.cs">
-      <DependentUpon>201812152205538_fk_changes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812161748252_TablesUpdate.cs" />
-    <Compile Include="Migrations\201812161748252_TablesUpdate.Designer.cs">
-      <DependentUpon>201812161748252_TablesUpdate.cs</DependentUpon>
+    <Compile Include="Migrations\201812191831067_DateUpdate.cs" />
+    <Compile Include="Migrations\201812191831067_DateUpdate.Designer.cs">
+      <DependentUpon>201812191831067_DateUpdate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -356,29 +332,11 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201812092056585_InitialCreate.resx">
-      <DependentUpon>201812092056585_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201812191828560_InitialCreate.resx">
+      <DependentUpon>201812191828560_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812092115314_ApplicationUserUpdate.resx">
-      <DependentUpon>201812092115314_ApplicationUserUpdate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812111822512_UploadDownloadDocumentModelsAdded.resx">
-      <DependentUpon>201812111822512_UploadDownloadDocumentModelsAdded.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812122035102_ModelsReorganization.resx">
-      <DependentUpon>201812122035102_ModelsReorganization.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812122133331_DocumentModelViewsPropAdded.resx">
-      <DependentUpon>201812122133331_DocumentModelViewsPropAdded.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812152204078_Account_fk_change.resx">
-      <DependentUpon>201812152204078_Account_fk_change.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812152205538_fk_changes.resx">
-      <DependentUpon>201812152205538_fk_changes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812161748252_TablesUpdate.resx">
-      <DependentUpon>201812161748252_TablesUpdate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201812191831067_DateUpdate.resx">
+      <DependentUpon>201812191831067_DateUpdate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
