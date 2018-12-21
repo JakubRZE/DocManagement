@@ -15,6 +15,7 @@ namespace DocManagement.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Documents
+        [Authorize]
         public ActionResult Index()
         {
             var documents = db.Documents.Include(d => d.ApplicationUser);
@@ -22,6 +23,7 @@ namespace DocManagement.Controllers
         }
 
         // GET: Documents/Details/5
+        [Authorize]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -37,6 +39,7 @@ namespace DocManagement.Controllers
         }
 
         // GET: Documents/Create
+        [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -59,6 +62,7 @@ namespace DocManagement.Controllers
         }
 
         // GET: Documents/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -90,6 +94,7 @@ namespace DocManagement.Controllers
         }
 
         // GET: Documents/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)
