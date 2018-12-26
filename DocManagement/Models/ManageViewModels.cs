@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
@@ -12,6 +13,24 @@ namespace DocManagement.Models
         public string PhoneNumber { get; set; }
         public bool TwoFactor { get; set; }
         public bool BrowserRemembered { get; set; }
+
+        [Display(Name = "First Name:")]
+        public string FirstName { get; set; }
+
+        [Display(Name = "Last Name:")]
+        public string LastName { get; set; }
+
+        [Display(Name = "Address:")]
+        public string Address { get; set; }
+
+        [Display(Name = "Position:")]
+        public string Position { get; set; }
+
+        [Display(Name = "Registration date:")]
+        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}")]
+        public DateTime RegistrationDate { get; set; }
+
+
     }
 
     public class ManageLoginsViewModel
