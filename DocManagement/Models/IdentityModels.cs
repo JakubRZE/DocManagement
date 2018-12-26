@@ -30,7 +30,7 @@ namespace DocManagement.Models
         //[Required]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         //// not supose to be here \/
-        [DisplayFormat(DataFormatString = "{0:dd MMMM yyyy}")]
+        [DisplayFormat(DataFormatString = "{0:d MMMM yyyy}")]
         public DateTime RegistrationDate { get; set; }
         
         public virtual ICollection<Document> Documents { get; set; }
