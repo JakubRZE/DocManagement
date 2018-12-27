@@ -1,4 +1,4 @@
-﻿@model IEnumerable<DocManagement.Models.Document>
+﻿@model DocManagement.ViewModels.ActivityViewModel
 
 @{
     ViewBag.Title = "Index";
@@ -7,39 +7,31 @@
 <div style="padding: 15px">
     <div class="row">
         <div class="col">
-            @*1 of 2*@
 
             <div class="card border-primary mb-3" style="max-width: 50rem;">
                 <div class="card-header">Uploaded</div>
                 <div class="card-body">
 
-
                     <table class="table">
                         <tr>
                             <th>
-                                @Html.DisplayNameFor(model => model.ApplicationUser.FirstName)
+                               Description
                             </th>
                             <th>
-                                @Html.DisplayNameFor(model => model.Description)
+                                UploadDate
                             </th>
                             <th>
-                                @Html.DisplayNameFor(model => model.UploadDate)
+                                File
                             </th>
                             <th>
-                                @Html.DisplayNameFor(model => model.File)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Views)
+                               Views
                             </th>
                             <th></th>
                         </tr>
 
-                        @foreach (var item in Model)
+                        @foreach (var item in Model.Uploads)
                         {
                             <tr>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.ApplicationUser.FirstName)
-                                </td>
                                 <td>
                                     @Html.DisplayFor(modelItem => item.Description)
                                 </td>
@@ -57,36 +49,60 @@
                                 </td>
                             </tr>
                         }
-
                     </table>
-
-
 
                 </div>
             </div>
 
-
-
-
         </div>
 
         <div class="col">
-            @*2 of 2*@
 
             <div class="card border-info mb-3" style="max-width: 50rem;">
                 <div class="card-header">Downloaded</div>
                 <div class="card-body">
 
+                    <table class="table">
+                        <tr>
+                            <th>
+                                Description
+                            </th>
+                            <th>
+                                UploadDate
+                            </th>
+                            <th>
+                                File
+                            </th>
+                            <th>
+                                Views
+                            </th>
+                            <th></th>
+                        </tr>
 
-
-
-
-
-
+                        @foreach (var item in Model.Downloads)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Description)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.UploadDate)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.File)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Views)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Details", "Details", new { id = item.Id })
+                                </td>
+                            </tr>
+                        }
+                    </table>
 
                 </div>
             </div>
-
 
         </div>
     </div>
