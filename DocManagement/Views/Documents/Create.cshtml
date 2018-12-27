@@ -6,8 +6,7 @@
 }
 
 
-<div class="card text-white bg-info mb-3 mx-auto" style="max-width: 40rem;">
-    
+<div class="card border-primary margin-top-light mb-3 mx-auto" style="max-width: 40rem;">
     <div class="card-body">
         <h4 class="card-title">Add new document</h4>
 
@@ -45,9 +44,9 @@
 
                 @Html.HiddenFor(model => model.ApplicationUserId, new { @Value = User.Identity.GetUserId() })
 
-                <hr/>
+                <hr />
                 <div class="text-center">
-                        <input type="submit" value="  Upload  " class="btn btn-default"/>
+                    <input type="submit" value="  Upload  " class="btn btn-default" />
                 </div>
             </div>
         }
