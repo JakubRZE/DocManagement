@@ -45,7 +45,7 @@
                                     @Html.DisplayFor(modelItem => item.Views)
                                 </td>
                                 <td>
-                                    @Html.ActionLink("Details", "Details", new { id = item.Id })
+                                    @Html.ActionLink("Document details",  "Details", "Documents", new { id = item.Id }, null)
                                 </td>
                             </tr>
                         }
@@ -95,7 +95,7 @@
                                     @Html.DisplayFor(modelItem => item.Views)
                                 </td>
                                 <td>
-                                    @Html.ActionLink("Details", "Details", new { id = item.Id })
+                                    @Html.ActionLink("Document details", "Details", "Documents", new { id = item.Id }, null)
                                 </td>
                             </tr>
                         }
