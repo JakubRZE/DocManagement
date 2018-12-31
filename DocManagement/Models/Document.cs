@@ -21,8 +21,9 @@ namespace DocManagement.Models
         public DateTime UploadDate { get; set; }
 
         [Required]
-        public string File { get; set; }
+        public Byte[] File { get; set; }
 
+        [Required]
         public int Views { get; set; }
 
         public string ApplicationUserId { get; set; }

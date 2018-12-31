@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using DocManagement.Models;
+using DocManagement.ViewModels;
+using Microsoft.AspNet.Identity;
 
 namespace DocManagement.Controllers
 {
@@ -50,15 +53,35 @@ namespace DocManagement.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Description,UploadDate,File,Views,ApplicationUserId")] Document document)
+        public ActionResult Create([Bind(Include = "Description")]  CreateDocumentViewModel model, HttpPostedFileBase postedFile)
         {
+           
             if (ModelState.IsValid)
             {
-                db.Documents.Add(document);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (postedFile != null && postedFile.ContentLength > 0)
+                {
+                    byte[] bytes;
+                    using (BinaryReader br = new BinaryReader(postedFile.InputStream))
+                    {
+                        bytes = br.ReadBytes(postedFile.ContentLength);
+                    }
+
+                    db.Documents.Add(new Document
+                    {
+                        Description = model.Description,
+                        File = bytes,
+                        ApplicationUserId = User.Identity.GetUserId()
+                    });
+
+                    //.Documents.Add(document);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+
+                }
+
             }
-            return View(document);
+            //return View(document);
+            return View();
         }
 
         // GET: Documents/Edit/5
