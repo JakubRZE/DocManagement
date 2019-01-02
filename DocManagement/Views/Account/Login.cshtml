@@ -10,19 +10,17 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - ASP.NET Application</title>
+    <title>@ViewBag.Title - DocManagement</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
 
-
-
 <body class="bg-dark">
 
     <div class="container margin-top-mid">
         <div class="card card-login mx-auto mt-5 margin-top-500">
-            <div class="card-header">Use a local account to log in.</div>
+            <div class="card-header">Document management site log in.</div>
             <div class="card-body">
 
 
@@ -58,12 +56,14 @@
                         </div>
                     </div>
                     <div class="form-group text-center">
-                            <input type="submit" value="Log in" class="btn btn-default" />
+                        <input type="submit" value="Log in" class="btn btn-default" />
+
+                        <hr />
+                        @Html.ActionLink("Register as a new user", "Register")
+
                     </div>
 
-                    <p>
-                        @Html.ActionLink("Register as a new user", "Register")
-                    </p>
+
                     @* Enable this once you have account confirmation enabled for password reset functionality
                         <p>
                             @Html.ActionLink("Forgot your password?", "ForgotPassword")
@@ -76,36 +76,13 @@
         </div>
     </div>
 
-
-
-
-    @*<div class="col-md-4">
-        <section id="socialLoginForm">
-            @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
-        </section>
-    </div>*@
-
-
-
-
-
-
-
-    @*<footer class="sticky-footer">
-        <div class="container my-auto">
-            <div class="copyright text-center my-auto">
-                <span>&copy; @DateTime.Now.Year - My ASP.NET Application</span>
-            </div>
-        </div>
-    </footer>*@
-
-
-
-    @section Scripts {
-        @Scripts.Render("~/bundles/jqueryval")
-    }
 </body>
 </html>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
 
 
 

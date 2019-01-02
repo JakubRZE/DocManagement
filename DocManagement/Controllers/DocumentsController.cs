@@ -22,7 +22,17 @@ namespace DocManagement.Controllers
         public ActionResult Index()
         {
             var documents = db.Documents.Include(d => d.ApplicationUser);
-            return View(documents.ToList());
+
+            var list = (from doc in db.Documents
+                         select new DocumentViewModel
+                         {
+                             Id = doc.Id,
+                             Description = doc.Description,
+                             UploadDate = doc.UploadDate,
+                             Name = doc.Name,
+                             Downloads = doc.Download.Count()
+                         }).ToList();
+            return View(list);
         }
 
         // GET: Documents/DownloadFile
