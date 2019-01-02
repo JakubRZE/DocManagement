@@ -1,5 +1,4 @@
-﻿@model DocManagement.Models.Document
-
+﻿@model DocManagement.ViewModels.DetailsDocumentViewModel
 @{
     ViewBag.Title = "Delete";
 }
@@ -15,11 +14,11 @@
             <hr />
             <dl class="dl-horizontal">
                 <dt>
-                    @Html.DisplayNameFor(model => model.ApplicationUser.FirstName)
+                    Uploaded by
                 </dt>
 
                 <dd>
-                    @Html.DisplayFor(model => model.ApplicationUser.FirstName)
+                    @Html.DisplayFor(model => model.UploadBy)
                 </dd>
 
                 <dt>
@@ -39,7 +38,7 @@
                 </dd>
 
                 <dt>
-                    @Html.DisplayNameFor(model => model.File)
+                    File
                 </dt>
 
                 <dd>
@@ -51,7 +50,7 @@
                 </dt>
 
                 <dd>
-                    0
+                    @Html.DisplayFor(model => model.Downloads)
                 </dd>
 
             </dl>
@@ -67,5 +66,5 @@
             }
         </div>
 
-</div>
+    </div>
 </div>

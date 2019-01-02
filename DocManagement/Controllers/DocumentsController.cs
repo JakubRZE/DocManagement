@@ -29,7 +29,7 @@ namespace DocManagement.Controllers
         [Authorize]
         public ActionResult DownloadFile(int? id)
         {
-            if (id == null)
+            if (!id.HasValue)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
@@ -38,7 +38,16 @@ namespace DocManagement.Controllers
             {
                 return HttpNotFound();
             }
+
+            db.Downloads.Add(new Download
+            {
+                DocumentId = id.Value,
+                ApplicationUserId = User.Identity.GetUserId()
+            });
+            db.SaveChanges();
+
             return File(document.File, document.ContentType, document.Name);
+
         }
 
         // GET: Documents/Details/5
@@ -54,7 +63,25 @@ namespace DocManagement.Controllers
             {
                 return HttpNotFound();
             }
-            return View(document);
+
+            var downloads = db.Downloads.Count(x => x.DocumentId == document.Id);
+
+            var user = db.Users.FirstOrDefault(x => x.Id == document.ApplicationUserId);
+
+            var viewModel = new DetailsDocumentViewModel
+            {
+                Id = document.Id,
+                UserFirstName = user.FirstName,
+                UserLastName = user.LastName,
+                Description = document.Description,
+                UploadDate = document.UploadDate,
+                Name = document.Name,
+                ContentType = document.ContentType,
+                Downloads = downloads
+            };
+
+
+            return View(viewModel);
         }
 
         // GET: Documents/Create
@@ -71,7 +98,7 @@ namespace DocManagement.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Description")]  CreateDocumentViewModel model, HttpPostedFileBase postedFile)
         {
-           
+
             if (ModelState.IsValid)
             {
                 if (postedFile != null && postedFile.ContentLength > 0)
@@ -95,9 +122,8 @@ namespace DocManagement.Controllers
                 }
 
             }
-            //!!!!!!!!!!!! dopisac error
             //return View(document);
-            return View();
+            return RedirectToAction("Index");
         }
 
         // GET: Documents/Edit/5
@@ -121,7 +147,7 @@ namespace DocManagement.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Description,UploadDate,File,Views")] Document document)
+        public ActionResult Edit([Bind(Include = "Id,Description,UploadDate,File,Name,ContentType,ApplicationUserId")] Document document)
         {
             if (ModelState.IsValid)
             {
@@ -145,7 +171,25 @@ namespace DocManagement.Controllers
             {
                 return HttpNotFound();
             }
-            return View(document);
+
+            var downloads = db.Downloads.Count(x => x.DocumentId == document.Id);
+
+            var user = db.Users.FirstOrDefault(x => x.Id == document.ApplicationUserId);
+
+            var viewModel = new DetailsDocumentViewModel
+            {
+                Id = document.Id,
+                UserFirstName = user.FirstName,
+                UserLastName = user.LastName,
+                Description = document.Description,
+                UploadDate = document.UploadDate,
+                Name = document.Name,
+                ContentType = document.ContentType,
+                Downloads = downloads
+            };
+
+
+            return View(viewModel);
         }
 
         // POST: Documents/Delete/5

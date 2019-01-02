@@ -13,11 +13,6 @@ namespace DocManagement.Models
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit https://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
     {
-        //public enum Position
-        //{
-        //    A, B, C, D, F
-        //}
-
         [Required]
         public string FirstName { get; set; }
         [Required]
@@ -27,7 +22,6 @@ namespace DocManagement.Models
         [Required]
         public string Position { get; set; }
 
-        //[Required]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         //// not supose to be here \/
         [DisplayFormat(DataFormatString = "{0:d MMMM yyyy}")]

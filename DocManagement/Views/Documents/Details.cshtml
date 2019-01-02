@@ -1,4 +1,4 @@
-﻿@model DocManagement.Models.Document
+﻿@model DocManagement.ViewModels.DetailsDocumentViewModel
 
 @{
     ViewBag.Title = "Details";
@@ -19,7 +19,7 @@
                 </dt>
 
                 <dd>
-                    @Html.DisplayFor(model => model.ApplicationUser.FirstName)
+                    @Html.DisplayFor(model => model.UploadBy)
                 </dd>
 
                 <dt>
@@ -39,7 +39,7 @@
                 </dd>
 
                 <dt>
-                    @Html.DisplayNameFor(model => model.File)
+                   File
                 </dt>
 
                 <dd>
@@ -59,7 +59,7 @@
                 </dt>
 
                 <dd>
-                    0
+                    @Html.DisplayFor(model => model.Downloads)
                 </dd>
 
             </dl>

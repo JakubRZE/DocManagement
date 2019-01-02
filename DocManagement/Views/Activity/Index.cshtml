@@ -23,9 +23,6 @@
                             <th>
                                 File
                             </th>
-                            <th>
-                               Views
-                            </th>
                             <th></th>
                         </tr>
 
@@ -39,10 +36,7 @@
                                     @Html.DisplayFor(modelItem => item.UploadDate)
                                 </td>
                                 <td>
-                                    @Html.DisplayFor(modelItem => item.File)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Views)
+                                    @Html.DisplayFor(modelItem => item.Name)
                                 </td>
                                 <td>
                                     @Html.ActionLink("Document details",  "Details", "Documents", new { id = item.Id }, null)
@@ -73,9 +67,6 @@
                             <th>
                                 File
                             </th>
-                            <th>
-                                Views
-                            </th>
                             <th></th>
                         </tr>
 
@@ -89,10 +80,7 @@
                                     @Html.DisplayFor(modelItem => item.UploadDate)
                                 </td>
                                 <td>
-                                    @Html.DisplayFor(modelItem => item.File)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Views)
+                                    @Html.DisplayFor(modelItem => item.Name)
                                 </td>
                                 <td>
                                     @Html.ActionLink("Document details", "Details", "Documents", new { id = item.Id }, null)
