@@ -19,20 +19,56 @@ namespace DocManagement.Controllers
 
         // GET: Documents
         [Authorize]
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder, string searchString)
         {
-            var documents = db.Documents.Include(d => d.ApplicationUser);
+            ViewBag.DiscSortParm = sortOrder == "Disc_desc" ? "Disc_asc" : "Disc_desc";
+            ViewBag.UpSortParm = sortOrder == "Up_desc" ? "Up_asc" : "Up_desc";
+            ViewBag.DownSortParm = sortOrder == "Down_desc" ? "Down_asc" : "Down_desc";
 
-            var list = (from doc in db.Documents
-                         select new DocumentViewModel
-                         {
-                             Id = doc.Id,
-                             Description = doc.Description,
-                             UploadDate = doc.UploadDate,
-                             Name = doc.Name,
-                             Downloads = doc.Download.Count()
-                         }).ToList();
-            return View(list);
+            var documents = from m in db.Documents
+                            select m;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                documents = documents.Where(s => s.Description.Contains(searchString));
+            }
+
+            var list = (from doc in documents
+                        select new DocumentViewModel
+                        {
+                            Id = doc.Id,
+                            Description = doc.Description,
+                            UploadDate = doc.UploadDate,
+                            Name = doc.Name,
+                            Downloads = doc.Download.Count()
+                        });
+
+            switch (sortOrder)
+            {
+                case "Disc_desc":
+                    list = list.OrderByDescending(s => s.Description);
+                    break;
+                case "Disc_asc":
+                    list = list.OrderBy(s => s.Description);
+                    break;
+                case "Up_desc":
+                    list = list.OrderByDescending(s => s.UploadDate);
+                    break;
+                case "Up_asc":
+                    list = list.OrderBy(s => s.UploadDate);
+                    break;
+                case "Down_desc":
+                    list = list.OrderByDescending(s => s.Downloads);
+                    break;
+                case "Down_asc":
+                    list = list.OrderBy(s => s.Downloads);
+                    break;
+
+                default:
+                    list = list.OrderBy(s => s.UploadDate);
+                    break;
+            }
+            return View(list.ToList());
         }
 
         // GET: Documents/DownloadFile
