@@ -8,24 +8,22 @@ namespace DocManagement.Controllers
 {
     public class HomeController : Controller
     {
-        [Authorize]
+        // GET: Home
         public ActionResult Index()
         {
             return View();
         }
 
-        //public ActionResult About()
-        //{
-        //    ViewBag.Message = "Your application description page.";
+        // GET:  DocumentsReport
+        public ActionResult DocumentsReport()
+        {
+            return View();
+        }
 
-        //    return View();
-        //}
-
-        //public ActionResult Contact()
-        //{
-        //    ViewBag.Message = "Your contact page.";
-
-        //    return View();
-        //}
+        // GET: EmployeesReport
+        public ActionResult EmployeesReport()
+        {
+            return View();
+        }
     }
 }

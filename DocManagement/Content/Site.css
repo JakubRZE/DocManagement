@@ -34,3 +34,14 @@ textarea {
 .padding-sev {
     padding: 7px;
 }
+
+
+
+.customLink {
+    color: white;
+    text-decoration: none;
+}
+.customLink:hover {
+    color: #ededed;
+    text-decoration: none;
+}
