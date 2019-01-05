@@ -349,6 +349,7 @@
     <Content Include="Views\Activity\Index.cshtml" />
     <Content Include="Views\Home\temp.cshtml" />
     <Content Include="Views\Home\EmployeesReport.cshtml" />
+    <Content Include="Views\Home\Index2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
