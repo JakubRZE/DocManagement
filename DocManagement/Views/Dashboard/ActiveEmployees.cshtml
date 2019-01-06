@@ -1,0 +1,70 @@
+﻿@model IEnumerable<DocManagement.Models.ApplicationUser>
+
+@{
+    ViewBag.Title = "ActiveEmployees";
+}
+
+<h2>ActiveEmployees</h2>
+
+
+
+<div class="card mb-3" style="padding:25px">
+    <div class="card-header row">
+        <div class="col" style="padding:7px">
+            <i class="fas fa-table"></i>
+            All documents
+        </div>
+
+        <div class="col text-right">
+            @using (Html.BeginForm(new { @class = "form-inline" }))
+            {
+                <input class="form-control mr-sm-2  d-inline" id="SearchString" name="SearchString" type="text" placeholder="Search" value="@ViewBag.CurrentFilter">
+                <button class="btn btn-secondary" type="submit">Submit</button>
+            }
+        </div>
+    </div>
+
+    <div class="card-body">
+        <div class="table-responsive">
+            <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                <div class="col-sm-12">
+                    <table class="table table-bordered dataTable" id="dataTable" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
+
+                        <tbody>
+
+                            <tr class="table-primary">
+                                <th>
+                                    Name
+                                </th>
+                                <th>
+                                    Email
+                                </th>
+                                <th>
+                                    Uploads
+                                </th>
+                                <th>
+                                    Details
+                                </th>
+                                <th></th>
+                            </tr>
+
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.FirstName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Email)
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+

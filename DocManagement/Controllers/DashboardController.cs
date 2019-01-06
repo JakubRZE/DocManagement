@@ -8,7 +8,7 @@ using DocManagement.ViewModels;
 
 namespace DocManagement.Controllers
 {
-    public class HomeController : Controller
+    public class DashboardController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
@@ -19,16 +19,27 @@ namespace DocManagement.Controllers
             return View();
         }
 
-        // GET:  DocumentsReport
+        // GET:  ActiveEmployees
         [Authorize]
-        public ActionResult DocumentsReport()
+        public ActionResult ActiveEmployees()
+        {
+            var users = from m in db.Users
+            select m;
+
+
+            return View(users);
+        }
+
+        // GET: DownloadedDocuments
+        [Authorize]
+        public ActionResult DownloadedDocuments()
         {
             return View();
         }
 
-        // GET: EmployeesReport
+        // GET: AllEmployees
         [Authorize]
-        public ActionResult EmployeesReport()
+        public ActionResult AllEmployees()
         {
             return View();
         }
