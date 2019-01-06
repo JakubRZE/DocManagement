@@ -238,7 +238,7 @@
     <Compile Include="ViewModels\CreateDocumentViewModel.cs" />
     <Compile Include="ViewModels\DetailsDocumentViewModel.cs" />
     <Compile Include="ViewModels\DocumentViewModel.cs" />
-    <Compile Include="ViewModels\DashboardDocumentViewModel.cs" />
+    <Compile Include="ViewModels\DashboardViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-grid.css" />
@@ -347,10 +347,10 @@
     <Content Include="Views\Documents\Edit.cshtml" />
     <Content Include="Views\Documents\Index.cshtml" />
     <Content Include="Views\Activity\Index.cshtml" />
-    <Content Include="Views\Dashboard\temp.cshtml" />
     <Content Include="Views\Dashboard\ActiveEmployees.cshtml" />
     <Content Include="Views\Dashboard\DownloadedDocuments.cshtml" />
     <Content Include="Views\Dashboard\AllEmployees.cshtml" />
+    <Content Include="Views\Dashboard\ActiveEmployeesDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

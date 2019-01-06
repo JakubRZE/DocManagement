@@ -1,4 +1,4 @@
-﻿@model IEnumerable<DocManagement.Models.ApplicationUser>
+﻿@model IEnumerable<DocManagement.ViewModels.DashboardViewModel>
 
 @{
     ViewBag.Title = "ActiveEmployees";
@@ -43,21 +43,26 @@
                                     Uploads
                                 </th>
                                 <th>
-                                    Details
+                                   Details
                                 </th>
-                                <th></th>
                             </tr>
 
                             @foreach (var item in Model)
                             {
-                                <tr>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.FirstName)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Email)
-                                    </td>
-                                </tr>
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.FullName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Email)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.UploadsCount)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Details", "ActiveEmployeesDetails", new { userId = item.Id })
+                                </td>
+                            </tr>
                             }
                         </tbody>
                     </table>

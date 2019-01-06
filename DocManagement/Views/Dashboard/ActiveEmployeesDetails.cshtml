@@ -1,0 +1,46 @@
+﻿@model IEnumerable<DocManagement.Models.Document>
+
+@{
+    ViewBag.Title = "ActiveEmployeesDetails";
+}
+
+<h2>ActiveEmployeesDetails</h2>
+<div class="card border-primary mb-3" style="max-width: 50rem;">
+    <div class="card-header">Upload history:</div>
+    <div class="card-body">
+
+        <table class="table">
+
+            <tr>
+                <th>
+                    Description
+                </th>
+
+                <th>
+                    Upload date
+                </th>
+                <th>
+                    File
+                </th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UploadDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                </tr>
+            }
+        
+        </table>
+    </div>
+</div>
+

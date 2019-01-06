@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -51,5 +52,7 @@ namespace DocManagement.Models
 
         public DbSet<Document> Documents { get; set; }
         public DbSet<Download> Downloads { get; set; }
+        public IEnumerable ApplicationUsers { get; internal set; }
+        //public System.Data.Entity.DbSet<DocManagement.Models.ApplicationUser> IdentityUser { get; set; }
     }
 }
