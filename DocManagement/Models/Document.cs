@@ -20,7 +20,7 @@ namespace DocManagement.Models
         [DisplayFormat(DataFormatString = "{0:dd MMMM yyyy}")]
         public DateTime UploadDate { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Choose file.")]
         public Byte[] File { get; set; }
 
         [Required]

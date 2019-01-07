@@ -30,8 +30,8 @@ namespace DocManagement.Controllers
                             LastName = x.LastName,
                             Email = x.Email,
                             UploadsCount = x.Documents.Count()
-                        }).ToList();
-            return View(users);
+                        }).Take(10).ToList();
+            return View(users.OrderByDescending(x=>x.UploadsCount));
         }
 
         // GET:  ActiveEmployees
@@ -52,18 +52,37 @@ namespace DocManagement.Controllers
                 UploadDate = x.UploadDate,
                 File = x.Name,
                 Downloads = x.Download.Count()
-            }).ToList().OrderBy(x => x.Downloads).Take(amount);
+            }).ToList().Take(amount);
 
             ViewBag.CurrentFilter = amount;
 
-            return View(documents);
+            return View(documents.OrderByDescending(x => x.Downloads));
         }
 
         // GET: AllEmployees
         [Authorize]
-        public ActionResult AllEmployees()
+        public ActionResult AllEmployees(string searchString)
         {
-            return View();
+            var users = from m in db.Users
+                        select m;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                users = users.Where(s => s.FirstName.Contains(searchString));
+                ViewBag.CurrentFilter = searchString;
+            }
+
+            var list = users.Select(x => new DashboardViewModel
+            {
+                FirstName = x.FirstName,
+                LastName = x.LastName,
+                Email = x.Email,
+                Address = x.Address,
+                UploadsCount = x.Documents.Count(),
+                Downloads = x.Downloads.Count()
+            }).ToList();
+
+            return View(list);
         }
     }
 }

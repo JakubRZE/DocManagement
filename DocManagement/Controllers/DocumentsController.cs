@@ -143,7 +143,7 @@ namespace DocManagement.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Description")]  CreateDocumentViewModel model, HttpPostedFileBase postedFile)
+        public ActionResult Create([Bind(Include = "Description, File")]  CreateDocumentViewModel model, HttpPostedFileBase postedFile)
         {
 
             if (ModelState.IsValid)
@@ -169,8 +169,8 @@ namespace DocManagement.Controllers
                 }
 
             }
-            //return View(document);
-            return RedirectToAction("Index");
+            
+            return View();
         }
 
         // GET: Documents/Edit/5
