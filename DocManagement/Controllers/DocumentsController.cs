@@ -31,6 +31,7 @@ namespace DocManagement.Controllers
             if (!String.IsNullOrEmpty(searchString))
             {
                 documents = documents.Where(s => s.Description.Contains(searchString));
+                ViewBag.CurrentFilter = searchString;
             }
 
             var list = (from doc in documents

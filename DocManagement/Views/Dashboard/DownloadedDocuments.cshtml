@@ -1,7 +1,68 @@
-﻿
-@{
-    ViewBag.Title = "DownloadedDocuments";
-}
+﻿@model IEnumerable<DocManagement.ViewModels.DashboardViewModel>
 
-<h2>DownloadedDocuments</h2>
+<div class="card mb-3" style="padding:25px">
+    <div class="card-header row">
+        <div class="col" style="padding:7px">
+            <i class="fas fa-table"></i>
+            The most usefull documents
+        </div>
+
+        <div class="col text-right">
+                @using (Html.BeginForm())
+                {
+                    <p  class="d-inline">Display on page:</p>
+                    <input class="form-control mr-sm-1  d-inline" id="SearchString" name="amount" type="text" placeholder="Search" value="@ViewBag.CurrentFilter">
+                    <button class="btn btn-secondary" type="submit">Submit</button>
+                }
+            </div>
+    </div>
+
+    <div class="card-body">
+        <div class="table-responsive">
+            <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                <div class="col-sm-12">
+                    <table class="table table-bordered dataTable" id="dataTable" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
+
+                        <tbody>
+
+                            <tr class="table-info">
+                                <th>
+                                    Description
+                                </th>
+                                <th>
+                                    Upload date
+                                </th>
+                                <th>
+                                    File
+                                </th>
+                                <th>
+                                    Downloads
+                                </th>
+                            </tr>
+                      
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Description)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.UploadDate)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.File)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Downloads)
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
 

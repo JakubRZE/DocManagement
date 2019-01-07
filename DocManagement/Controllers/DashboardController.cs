@@ -39,16 +39,24 @@ namespace DocManagement.Controllers
         public ActionResult ActiveEmployeesDetails(string userId)
         {
             var documents = db.Documents.Where(x => x.ApplicationUserId == userId).OrderBy(x => x.UploadDate);
-            //var userDetails = db.Users.SingleOrDefault(x => x.Id == userId);
-            //return View(userDetails);
             return View(documents.ToList());
         }
 
         // GET: DownloadedDocuments
         [Authorize]
-        public ActionResult DownloadedDocuments()
+        public ActionResult DownloadedDocuments(int amount = 10)
         {
-            return View();
+            var documents = db.Documents.Select(x => new DashboardViewModel
+            {
+                Description = x.Description,
+                UploadDate = x.UploadDate,
+                File = x.Name,
+                Downloads = x.Download.Count()
+            }).ToList().OrderBy(x => x.Downloads).Take(amount);
+
+            ViewBag.CurrentFilter = amount;
+
+            return View(documents);
         }
 
         // GET: AllEmployees
