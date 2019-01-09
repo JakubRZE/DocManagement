@@ -22,7 +22,15 @@
 
         <hr />
         For administrator
-        <a href="@Url.Action("AllEmployees", "Dashboard")" class="customLink">
+        @if (User.IsInRole("Admin"))
+        {
+            <a href="@Url.Action("AllEmployees", "Dashboard")" class="customLink">
+                <div class="card bg-warning mx-auto card-body" style="max-width: 30rem;">
+                    <h4>List of all employees</h4>
+                </div>
+            </a>
+        }
+        <a href="#" class="customLink" title="You are not the administrator">
             <div class="card bg-warning mx-auto card-body" style="max-width: 30rem;">
                 <h4>List of all employees</h4>
             </div>
