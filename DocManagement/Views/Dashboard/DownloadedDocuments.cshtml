@@ -6,7 +6,6 @@
             <i class="fas fa-table"></i>
             The most usefull documents
         </div>
-
         <div class="col text-right">
                 @using (Html.BeginForm())
                 {
@@ -16,7 +15,6 @@
                 }
             </div>
     </div>
-
     <div class="card-body">
         <div class="table-responsive">
             <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
@@ -39,7 +37,6 @@
                                     Downloads
                                 </th>
                             </tr>
-                      
                             @foreach (var item in Model)
                             {
                                 <tr>

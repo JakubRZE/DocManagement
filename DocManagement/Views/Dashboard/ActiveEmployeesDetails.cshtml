@@ -7,9 +7,7 @@
 <div class="card border-primary mb-3 mx-auto" style="max-width: 50rem;">
     <div class="card-header">Uploaded documents:</div>
     <div class="card-body">
-
         <table class="table">
-
             <tr>
                 <th>
                     Description
@@ -22,7 +20,6 @@
                     File
                 </th>
             </tr>
-
             @foreach (var item in Model)
             {
                 <tr>
@@ -37,8 +34,7 @@
                         @Html.DisplayFor(modelItem => item.Name)
                     </td>
                 </tr>
-            }
-        
+            }      
         </table>
     </div>
 </div>
