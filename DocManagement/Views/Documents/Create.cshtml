@@ -1,5 +1,4 @@
 ﻿@model DocManagement.Models.Document
-@using Microsoft.AspNet.Identity
 
 @{
     ViewBag.Title = "Create";
@@ -32,8 +31,6 @@
                     <input type="file" id="btnUpload" name="postedFile" />
                 </div>
             </div>
-
-            @*@Html.HiddenFor(model => model.ApplicationUserId, new { @Value = User.Identity.GetUserId() })*@
 
             <hr />
             <div class="text-center">

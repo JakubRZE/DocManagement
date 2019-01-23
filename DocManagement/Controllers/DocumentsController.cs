@@ -72,14 +72,12 @@ namespace DocManagement.Controllers
                         File = bytes,
                         ApplicationUserId = User.Identity.GetUserId()
                     });
-
-                    //.Documents.Add(document);
                     db.SaveChanges();
                     return RedirectToAction("Index");
-
                 }
 
             }
+            //!!!!!!!!!!!! dopisac error
             //return View(document);
             return View();
         }
