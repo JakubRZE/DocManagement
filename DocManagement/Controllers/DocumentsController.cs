@@ -25,6 +25,22 @@ namespace DocManagement.Controllers
             return View(documents.ToList());
         }
 
+        // GET: Documents/DownloadFile
+        [Authorize]
+        public ActionResult DownloadFile(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Document document = db.Documents.Find(id);
+            if (document == null)
+            {
+                return HttpNotFound();
+            }
+            return File(document.File, document.ContentType, document.Name);
+        }
+
         // GET: Documents/Details/5
         [Authorize]
         public ActionResult Details(int? id)
@@ -69,6 +85,8 @@ namespace DocManagement.Controllers
                     db.Documents.Add(new Document
                     {
                         Description = model.Description,
+                        Name = Path.GetFileName(postedFile.FileName),
+                        ContentType = postedFile.ContentType,
                         File = bytes,
                         ApplicationUserId = User.Identity.GetUserId()
                     });

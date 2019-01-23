@@ -43,21 +43,29 @@
                 </dt>
 
                 <dd>
-                    @Html.DisplayFor(model => model.File)
+                    @Html.DisplayFor(model => model.Name)
                 </dd>
 
                 <dt>
-                    @Html.DisplayNameFor(model => model.Views)
+                    @Html.DisplayNameFor(model => model.ContentType)
                 </dt>
 
                 <dd>
-                    @Html.DisplayFor(model => model.Views)
+                    @Html.DisplayFor(model => model.ContentType)
+                </dd>
+
+                <dt>
+                    Downloads
+                </dt>
+
+                <dd>
+                    0
                 </dd>
 
             </dl>
             <div class="text-center">
                 <p>
-                    @Html.ActionLink("Download", "#", new { id = Model.Id }) |
+                    @Html.ActionLink("Download", "DownloadFile", new { id = Model.Id }) |
                     @Html.ActionLink("Back to List", "Index")
                 </p>
 

@@ -218,6 +218,10 @@
     <Compile Include="Migrations\201812302007001_ViewsAndFilePropAddedAgain.Designer.cs">
       <DependentUpon>201812302007001_ViewsAndFilePropAddedAgain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201901230230073_DocumentModelNewProp.cs" />
+    <Compile Include="Migrations\201901230230073_DocumentModelNewProp.Designer.cs">
+      <DependentUpon>201901230230073_DocumentModelNewProp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Document.cs" />
@@ -369,6 +373,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812302007001_ViewsAndFilePropAddedAgain.resx">
       <DependentUpon>201812302007001_ViewsAndFilePropAddedAgain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901230230073_DocumentModelNewProp.resx">
+      <DependentUpon>201901230230073_DocumentModelNewProp.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

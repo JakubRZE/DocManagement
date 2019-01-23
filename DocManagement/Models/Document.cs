@@ -24,7 +24,10 @@ namespace DocManagement.Models
         public Byte[] File { get; set; }
 
         [Required]
-        public int Views { get; set; }
+        public string Name { get; set; }
+
+        [Required]
+        public string ContentType { get; set; }
 
         public string ApplicationUserId { get; set; }
         public virtual ApplicationUser ApplicationUser { get; set; }

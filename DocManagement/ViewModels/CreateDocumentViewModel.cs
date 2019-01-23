@@ -14,6 +14,8 @@ namespace DocManagement.ViewModels
 
         public Byte[] File { get; set; }
 
-        //public string ApplicationUserId { get; set; }
+        public string Name { get; set; }
+
+        public string ContentType { get; set; }
     }
 }
