@@ -79,7 +79,6 @@ namespace DocManagement.Controllers
                 FirstName = user.FirstName,
                 LastName = user.LastName,
                 Address = user.Address,
-                Position = user.Position,
                 RegistrationDate = user.RegistrationDate
              };
 

@@ -74,9 +74,6 @@ namespace DocManagement.Models
         [Display(Name = "Address")]
         public string Address { get; set; }
         [Required]
-        [Display(Name = "Position")]
-        public string Position { get; set; }
-        [Required]
         [Display(Name = "Phone Number")]
         public string PhoneNumber { get; set; }
 

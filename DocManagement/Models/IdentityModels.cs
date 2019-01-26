@@ -19,8 +19,6 @@ namespace DocManagement.Models
         public string LastName { get; set; }
         [Required]
         public string Address { get; set; }
-        [Required]
-        public string Position { get; set; }
 
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         //// not supose to be here \/
