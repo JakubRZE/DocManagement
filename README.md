@@ -1,4 +1,4 @@
-<h2>C# ASP.NET MVC App</h2> <br /><br />
+<h2>C# ASP.NET MVC 5.2.6 App</h2> <br /><br />
 
 Application for documentation management.
 
