@@ -7,6 +7,9 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using DocManagement.Models;
+using System.Net;
+using System.Data.Entity;
+using DocManagement.ViewModels;
 
 namespace DocManagement.Controllers
 {
@@ -34,9 +37,9 @@ namespace DocManagement.Controllers
             {
                 return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
             }
-            private set 
-            { 
-                _signInManager = value; 
+            private set
+            {
+                _signInManager = value;
             }
         }
 
@@ -80,7 +83,7 @@ namespace DocManagement.Controllers
                 LastName = user.LastName,
                 Address = user.Address,
                 RegistrationDate = user.RegistrationDate
-             };
+            };
 
             return View(model);
         }
@@ -331,6 +334,87 @@ namespace DocManagement.Controllers
             var result = await UserManager.AddLoginAsync(User.Identity.GetUserId(), loginInfo.Login);
             return result.Succeeded ? RedirectToAction("ManageLogins") : RedirectToAction("ManageLogins", new { Message = ManageMessageId.Error });
         }
+
+
+        //
+        // GET: /Manage/Edit
+        [Authorize]
+        public ActionResult EditUser(string id)
+        {
+            var user = context.Users.Find(id);
+            if (user == null)
+            {
+                return HttpNotFound();
+            }
+            return View(user);
+        }
+
+        //
+        // POST: /Manage/Edit
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditUser([Bind(Include = "Id,FirstName,LastName,Address,Email,PhoneNumber")] EditUserVM model)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = context.Users.Find(model.Id);
+
+                user.Id = model.Id;
+                user.FirstName = model.FirstName;
+                user.LastName = model.LastName;
+                user.Address = model.Address;
+                user.Email = model.Email;
+                user.PhoneNumber = model.PhoneNumber;
+
+                context.Entry(user).State = EntityState.Modified;
+                context.SaveChanges();
+                return RedirectToAction("EditUser", "Manage", new { id = model.Id });
+            }
+            TempData["error"] = "Something goees wrong.";
+            return RedirectToAction("EditUser", "Manage", new { id = model.Id });
+        }
+
+        //
+        // GET: /Manage/Delete
+        [Authorize]
+        public ActionResult DeleteUser(string id)
+        {
+            //var user = context.Users.Where(x => x.Id == id)
+            var user = context.Users.Find(id);
+            if (user == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(user);
+        }
+
+        //
+        // POST: /Manage/Delete
+        [HttpPost, ActionName("DeleteUser")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteUserConfirm(string id)
+        {
+            var user = context.Users.Find(id);
+            try
+            {
+                context.Users.Remove(user);
+                context.SaveChanges();
+            }
+            catch {
+                TempData["error"] = "Something goees wrong.";
+                return RedirectToAction("DeleteUser", "Manage", new { id });
+            }
+            return RedirectToAction("AllEmployees", "Dashboard");
+        }
+
+
+
+
+
+
+
+
 
         protected override void Dispose(bool disposing)
         {

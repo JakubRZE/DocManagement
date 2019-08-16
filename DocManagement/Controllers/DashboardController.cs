@@ -74,6 +74,7 @@ namespace DocManagement.Controllers
 
             var list = users.Select(x => new DashboardViewModel
             {
+                Id = x.Id,
                 FirstName = x.FirstName,
                 LastName = x.LastName,
                 Email = x.Email,
