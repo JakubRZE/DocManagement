@@ -9,7 +9,7 @@ https://docmanagement.azurewebsites.net</h4>
 <h5>Hints:</h5>
 To check options avalible for administrator login as:<br />
 Login:  <b> admin@admin.com </b> <br />
-Password:  <b>  Admin1!
+Password:  <b>  123456
 </b> <br />
 
 <br />
