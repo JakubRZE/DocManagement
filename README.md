@@ -14,7 +14,6 @@ Password:  <b>  123456
 
 <br />
 
-To check options for user just create your account.<br /><br />
 
 Screenshot:
 ![aspdoc](https://user-images.githubusercontent.com/38703432/57927920-b868da00-78af-11e9-9ef4-f4b49744a276.png)
