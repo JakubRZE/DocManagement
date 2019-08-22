@@ -12,6 +12,12 @@ Login:  <b> admin@admin.com </b> <br />
 Password:  <b>  123456
 </b> <br />
 
+
+To check options avalible for user login as:<br />
+Login:  <b> adam@kowalski.com </b> <br />
+Password:  <b>  123456
+</b> <br />
+
 <br />
 
 
