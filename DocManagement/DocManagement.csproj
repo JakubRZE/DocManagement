@@ -198,33 +198,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201812191828560_InitialCreate.cs" />
-    <Compile Include="Migrations\201812191828560_InitialCreate.Designer.cs">
-      <DependentUpon>201812191828560_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812191831067_DateUpdate.cs" />
-    <Compile Include="Migrations\201812191831067_DateUpdate.Designer.cs">
-      <DependentUpon>201812191831067_DateUpdate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812302002477_filePropDeleted.cs" />
-    <Compile Include="Migrations\201812302002477_filePropDeleted.Designer.cs">
-      <DependentUpon>201812302002477_filePropDeleted.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812302004553_ViewsPropDeleted.cs" />
-    <Compile Include="Migrations\201812302004553_ViewsPropDeleted.Designer.cs">
-      <DependentUpon>201812302004553_ViewsPropDeleted.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812302007001_ViewsAndFilePropAddedAgain.cs" />
-    <Compile Include="Migrations\201812302007001_ViewsAndFilePropAddedAgain.Designer.cs">
-      <DependentUpon>201812302007001_ViewsAndFilePropAddedAgain.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201901230230073_DocumentModelNewProp.cs" />
-    <Compile Include="Migrations\201901230230073_DocumentModelNewProp.Designer.cs">
-      <DependentUpon>201901230230073_DocumentModelNewProp.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201901261303041_UserPositionDelete.cs" />
-    <Compile Include="Migrations\201901261303041_UserPositionDelete.Designer.cs">
-      <DependentUpon>201901261303041_UserPositionDelete.cs</DependentUpon>
+    <Compile Include="Migrations\201908231353496_Initial.cs" />
+    <Compile Include="Migrations\201908231353496_Initial.Designer.cs">
+      <DependentUpon>201908231353496_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -373,26 +349,8 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201812191828560_InitialCreate.resx">
-      <DependentUpon>201812191828560_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812191831067_DateUpdate.resx">
-      <DependentUpon>201812191831067_DateUpdate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812302002477_filePropDeleted.resx">
-      <DependentUpon>201812302002477_filePropDeleted.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812302004553_ViewsPropDeleted.resx">
-      <DependentUpon>201812302004553_ViewsPropDeleted.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812302007001_ViewsAndFilePropAddedAgain.resx">
-      <DependentUpon>201812302007001_ViewsAndFilePropAddedAgain.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201901230230073_DocumentModelNewProp.resx">
-      <DependentUpon>201901230230073_DocumentModelNewProp.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201901261303041_UserPositionDelete.resx">
-      <DependentUpon>201901261303041_UserPositionDelete.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201908231353496_Initial.resx">
+      <DependentUpon>201908231353496_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

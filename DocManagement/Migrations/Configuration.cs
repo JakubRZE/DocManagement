@@ -10,7 +10,6 @@ namespace DocManagement.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "DocManagement.Models.ApplicationDbContext";
         }
 
         protected override void Seed(DocManagement.Models.ApplicationDbContext context)

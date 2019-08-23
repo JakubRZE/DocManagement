@@ -16,7 +16,6 @@ namespace DocManagement.Models
         public string Description { get; set; }
 
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        //// not supose to be here \/
         [DisplayFormat(DataFormatString = "{0:dd MMMM yyyy}")]
         public DateTime UploadDate { get; set; }
 
